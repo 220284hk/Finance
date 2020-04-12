@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block style %}
+tfoot td {
+    font-weight:bold;
+}
+{% endblock %}
+
+{% block main %}
+
+<table class="table table-striped">
+
+<thead>
+    <th>Name</th>
+    <th>Symbol</th>
+    <th>Share(s)</th>
+    <th>Price</th>
+    <th>Total</th>
+</thead>
+
+{% for stock in portfolio %}
+<tr>
+    <td>{{ portfolio[stock][0] }}</td>
+    <td>{{ stock }}</td>
+    <td>{{ portfolio[stock][1] }}</td>
+    <td>${{ "{:.2f}".format(portfolio[stock][2]) }}</td>
+    <td>${{ "{:.2f}".format(portfolio[stock][1] * portfolio[stock][2]) }}</td>
+</tr>
+{% endfor %}
+<tr>
+    <td>CASH</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>${{ "{:.2f}".format(cash) }}</td>
+</tr>
+
+
+
+<tfoot>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>${{ "{:.2f}".format(total) }}</td>
+</tfoot>
+</table>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+<table class="table table-striped">
+    <thead>
+        <th>Symbol</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Transaction time</th>
+    </thead>
+
+{% for stock in portfolio %}
+    <tr>
+        <td>{{ stock["symbol"] }}</td>
+        <td>{{ stock["quantity"] }}</td>
+        <td>${{ stock["price"] }}</td>
+        <td>{{ stock["when"] }}</td>
+    </tr>
+{% endfor %}
+
+</table>
+
+{% endblock %}

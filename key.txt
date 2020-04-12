@@ -1,0 +1,21 @@
+pk_0b5474a898b9441ca5c23e92cf40a929
+
+{'name': 'Apple, Inc.', 'price': 267.99, 'symbol': 'AAPL'}
+
+'''INSERT INTO buy (user_id, symbol, quantity, price) VALUES (:id, :symbol, :quantity, :price);''',
+id = session["user_id"], symbol = lookup(symbol)["symbol"], quantity = int(request.form.get("share")), price = lookup(symbol)["price"])
+
+
+SELECT symbol, quantity FROM "buy" WHERE user_id = 5;
+
+
+
+{% for stock in portfolio %}
+<tr>
+    <td>{{ portfolio[stock][0] }}</td>
+    <td>{{ stock }}</td>
+    <td>{{ portfolio[stock][1] }}</td>
+    <td>{{ portfolio[stock][2] }}</td>
+    <td>{{ portfolio[stock][1] * portfolio[stock][2] }}</td>
+</tr>
+{% endfor %}

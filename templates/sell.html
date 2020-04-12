@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+<!--<select id="cars" name="cars">-->
+<!--  <option value="volvo">Volvo</option>-->
+<!--  <option value="saab">Saab</option>-->
+<!--  <option value="fiat">Fiat</option>-->
+<!--  <option value="audi">Audi</option>-->
+<!--</select>-->
+
+{% block main %}
+<h3>Select a share</h3>
+<form method="POST" name="stocks">
+<select name="selected" class="form-group">
+
+{% for stock in portfolio %}
+
+<option value="{{ stock }}">{{ stock }}</option>
+
+{% endfor %}
+
+</select>
+
+<div class="form-group">
+<input name="share" placeholder="number of shares" type="number" min="1"></input>
+</div>
+
+<button class="btn btn-primary" type="submit">SELL</input>
+</form>
+{% endblock %}
